@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+	
+	<div>
+		<div>
+			<img src="buyer_flat.jpg" style="width: 30%; height: 30%; align-content: left;">
+		</div>
+
+		<table style="width: 30%; align-self: center;">
+		<form action="/action_page.php" method="post">
+			<tr>
+				<td>FirstName :</td>
+				<td><input type="text" width="70"></td>
+			</tr>
+
+			<tr>
+				<td>LastName :</td>
+				<td><input type="text" width="70"></td>
+			</tr>
+
+			<tr>
+				<td>Contact :</td>
+  				<td><input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"></td>
+			</tr>
+		
+			<tr>
+				<td>Email :</td>
+				<td><input type="text" width="70"></td>
+			</tr>
+
+			<tr>
+				<td>Password :</td>
+				<td><input type="Password" width="70"></td>
+			</tr>
+
+			<tr>
+				<td>Budget (In Thousands):</td>
+  				<td><input type="range" id="myRange" name="vol" min="1" max="100" class="slider"></td>
+  				<td><p>Value: <span id="demo"></span></p></td>
+			</tr>
+
+			<tr>
+				<td>Area :</td>
+				<td><input type="checkbox" value="Residential">Residential
+						   <input type="checkbox" value="Commercial">Commercial </td>
+			</tr>
+
+			<tr>
+				<td>Gender :</td>
+				<td><input type="radio" value="MALE" name="r1">MALE
+				 <input type="radio" value="FEMALE "name="r1">FEMALE</td>
+			</tr>
+
+			<tr>
+				<td>Rent for :</td>
+				<td><select>
+						<option value="Room">Room</option>
+						<option value="Flat">Flat</option>
+						<option value="Office">Office</option>
+					</select>
+				</td>
+			</tr>
+
+		 	<tr>
+		 		<td><input type="submit" value="SUBMIT"></td>
+		 	</tr>
+       
+	</form>	
+	</table>
+	
+			<div>
+				<img src="buyer_office.jpg" style="width: 30%; height: 30%;">
+			</div>
+
+	</div>
+
+	<script>
+		var slider = document.getElementById("myRange");
+		var output = document.getElementById("demo");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+  			output.innerHTML = this.value;
+	}
+	</script>
+	
+	
+
+</body>
+</html>
